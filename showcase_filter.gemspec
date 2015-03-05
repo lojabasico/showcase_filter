@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = ShowcaseFilter::VERSION
   spec.authors       = ["Lucas"]
   spec.email         = ["lucas.santanadesouza@gmail.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.summary       = %q{Group, intersect and Match collections using custom rules }
+  spec.description   = %q{Group, intersect and Match collections using custom rules.}
   spec.homepage      = ""
   spec.license       = "MIT"
 
