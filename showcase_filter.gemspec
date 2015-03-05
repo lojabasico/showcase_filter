@@ -6,11 +6,11 @@ require 'showcase_filter/version'
 Gem::Specification.new do |spec|
   spec.name          = "showcase_filter"
   spec.version       = ShowcaseFilter::VERSION
-  spec.authors       = ["Lucas"]
-  spec.email         = ["lucas.santanadesouza@gmail.com"]
+  spec.authors       = ["Lucas Santana", "Renato Alves"]
+  spec.email         = ["lucas.santanadesouza@gmail.com", "renatodex@gmail.com"]
   spec.summary       = %q{Group, intersect and Match collections using custom rules }
   spec.description   = %q{Group, intersect and Match collections using custom rules.}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/lojabasico/showcase_filter"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
