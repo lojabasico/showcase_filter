@@ -1,7 +1,10 @@
-  require 'bundler'
-  Bundler.setup
-  require 'virtus'
-  require 'pry'
+require 'bundler'
+Bundler.setup
+require 'virtus'
+require 'pry'
+
+require "showcase_filter"
+
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
