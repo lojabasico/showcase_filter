@@ -8,4 +8,7 @@ require "showcase_filter/models/expression"
 
 
 module ShowcaseFilter
+  def self.filter(*args, &block)
+    ShowcaseFilter::Core.filter(*args, &block)
+  end
 end

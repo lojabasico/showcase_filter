@@ -30,6 +30,14 @@ describe ShowcaseFilter do
         expect(s.find_by_label("azul").label).to eq "azul"
       }
 
+      it "should work with alias" do
+        s = ShowcaseFilter.filter(variants) do |e,ex|
+          e.color
+        end
+
+        expect(s.find_by_label("azul").label).to eq "azul"
+      end
+
       it "concat group collections should generate a new GroupCollection" do
         g1 = ShowcaseFilter::Models::GroupCollection.new([1])
         g2 = ShowcaseFilter::Models::GroupCollection.new([2])
@@ -43,7 +51,8 @@ describe ShowcaseFilter do
       { :type => "union", :expression => "dog+cat", :match1 => "dog", :match2 => "+", :match3 => "cat" },
       { :type => "intersection", :expression => "dog&cat", :match1 => "dog", :match2 => "&", :match3 => "cat" },
       { :type => "exclusion", :expression => "dog-cat", :match1 => "dog", :match2 => "-", :match3 => "cat" },
-      { :type => "spaces", :expression => "dog   +   cat", :match1 => "dog", :match2 => "+", :match3 => "cat" }
+      { :type => "spaces", :expression => "dog   +   cat", :match1 => "dog", :match2 => "+", :match3 => "cat" },
+      { :type => 'acents', :expression => "verde água & p", :match1 => "verde água", :match2 => "&", :match3 => "p"}
     ].each do |info|
       it "should evaluate #{info[:type]} expression" do
         match = ShowcaseFilter::Core.evaluate_expression(info[:expression])

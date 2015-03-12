@@ -37,15 +37,15 @@ module ShowcaseFilter
 
     def self.evaluate_expression(expression)
       # Supported operators are : union(+), exclusion(-) and intersection(&)
-      regex = /(\w+)\s*(\+|\-|\&)\s*(\w+)/
+      regex = /([[:alpha:]|\s]+)\s*(\+|\-|\&)\s*(\w+)/i
       match_result = expression.match(regex)
       return nil if match_result.nil?
 
       ShowcaseFilter::Models::Expression.new({
           :expression => match_result[0],
           :operator => match_result[2],
-          :group1 => match_result[1],
-          :group2 => match_result[3]
+          :group1 => match_result[1].strip,
+          :group2 => match_result[3].strip
       })
     end
   end
